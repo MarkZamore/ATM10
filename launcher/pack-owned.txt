@@ -1,0 +1,17 @@
+# Files this pack owns outright.
+#
+# An instance is merged from the pack three ways, and a file that matches
+# neither the pack's old copy nor its new one is taken for the player's work
+# and left alone. That is right for a setting somebody tuned by hand and wrong
+# for a file the game rewrites on its own - such a file looks edited from the
+# first launch, so nothing shipped here could ever reach it again.
+#
+# Everything listed below is written over instead. What was there is copied
+# into the instance's conflicts folder first, as name.user-file, so a change
+# somebody did mean can be put back.
+
+# NeoForge normalises this one at every start. A dependency override left in it
+# named a mod this pack no longer has, and the game answered with a red warning
+# screen on every launch - the corrected file could not reach the instance
+# because the loader's own rewrite made it look like somebody's edit.
+config/fml.toml

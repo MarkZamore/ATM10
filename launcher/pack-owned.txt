@@ -21,3 +21,11 @@ config/fml.toml
 # already installed. The mod rewrites this file on start, which is exactly
 # why the corrected numbers need claiming to reach an instance.
 config/allthetweaks-common.toml
+
+# The same answer to a second asker. This pack's own update check, in
+# kubejs/startup_scripts/update_checker.js, reads its version out of Better
+# Compatibility Checker - whose config ships "CHANGE_ME", a version with no
+# numbers in it, so every release on CurseForge counted as newer. BCC rewrites
+# this file on start too, so the real name and version reach an instance that
+# already exists only by being claimed here.
+config/bcc-common.toml

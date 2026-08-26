@@ -1,0 +1,11 @@
+# Byte identity is the point: the launcher and its peers compare SHA-256 hashes
+# of the pack's files, so git must not touch a single byte - no line-ending
+# conversion, no filters.
+#
+# This arrived late. core.autocrlf is true system-wide on the machine this pack
+# was laid out on, so 753 of its text files went into git with their CRLFs
+# stripped and have differed from the copy on disk ever since. What players
+# have is the git copy - the runner that builds the release checks out exactly
+# these bytes - so the divergence was resolved in git's favour rather than the
+# other way round, and no file any player holds changed.
+* -text

@@ -31,6 +31,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      # The layout is only a promise until something proves it: this reads the
+      # preset against the key registry and NeoForge's own KeyMapping.same, and
+      # fails the publish if any two mappings would come out red in the
+      # Controls screen.
+      - name: Check the controls preset
+        run: python tools/keybinds/check_preset.py
+
       - name: Generate manifest and stage assets
         run: python tools/generate_manifest.py --pack . --out dist --revision "$GITHUB_SHA"
 
